@@ -1,14 +1,15 @@
-const getLocation = () => {
+const getLocation = setGeoLocation => {
   //function that retrieves the position
   const showPosition = position => {
-    return {
+    const location = {
       longitude: position.coords.longitude,
       latitude: position.coords.latitude
     };
+    setGeoLocation(location);
   };
 
   if (navigator.geolocation) {
-    return navigator.geolocation.getCurrentPosition(showPosition);
+    navigator.geolocation.getCurrentPosition(showPosition);
   } else {
     console.log("Geo Location not supported");
   }

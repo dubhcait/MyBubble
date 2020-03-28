@@ -24,7 +24,11 @@ const App = () => {
 
   const gainLife = () => setLifeCount([...lifeCount].push(1));
 
-  const [geoLocation, setGeoLocation] = useState(getLocation || null);
+  const [geoLocation, setGeoLocation] = useState("");
+
+  useEffect(() => {
+    getLocation(setGeoLocation);
+  }, []);
 
   useEffect(() => {
     console.log("location", geoLocation);
