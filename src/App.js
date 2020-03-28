@@ -1,26 +1,63 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { Modal } from "./components/modal";
 
-function App() {
+import {
+  GameIntro,
+  InitialScreen,
+  OupsTooManyPeople,
+  OupsEnd,
+  WellDone,
+  MainScreen
+} from "./screen";
+import getLocation from "./util/geoLocation";
+
+const App = () => {
+  const hasIntroBeenSeen = window.localStorage.getItem("introSeen");
+  const [showIntro, setShowIntro] = useState(hasIntroBeenSeen ? false : true);
+  const [showGameInstructions, setGameInstructions] = useState(false);
+
+  const [modalMesg, setModalMesg] = useState(false);
+  const [lifeCount, setLifeCount] = useState([1, 1, 1]);
+
+  const lostLife = () =>
+    setLifeCount(lifeCount.length > 0 ? [...lifeCount].pop() : lifeCount);
+
+  const gainLife = () => setLifeCount([...lifeCount].push(1));
+
+  const [geoLocation, setGeoLocation] = useState(getLocation || null);
+
+  useEffect(() => {
+    console.log("location", geoLocation);
+  }, [geoLocation]);
+
+  const introPartialSeen = () => {
+    setShowIntro(false);
+    setGameInstructions(true);
+  };
+
+  const introAllSeen = () => {
+    setGameInstructions(false);
+    window.localStorage.setItem("introSeen", "true");
+  };
+
+  const displayModalMesg = () => {};
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {showIntro && (
+        <Modal>
+          <InitialScreen introPartialSeen={introPartialSeen} />
+        </Modal>
+      )}
+      {showGameInstructions && (
+        <Modal>
+          <GameIntro introAllSeen={introAllSeen} />
+        </Modal>
+      )}
+      {/* {modalMesg && <Modal>{modalMesg}</Modal>} */}
+      <MainScreen lifeCount={lifeCount} />
     </div>
   );
-}
+};
 
 export default App;
