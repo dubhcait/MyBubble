@@ -6,7 +6,8 @@ import {
   newTask,
   home,
   poppedBubble,
-  twoPeople
+  twoPeople,
+  group
 } from "../assets";
 import { useHistory } from "react-router-dom";
 
@@ -35,7 +36,7 @@ const GameIntro = ({ introAllSeen }) => {
       <Heading>Don’t burst any bubbles by breaking social distance!</Heading>
       <FlexRow>
         <img src={twoPeople} style={{ height: 30 + "px", margin: 15 + "px" }} />
-        {/* <img src={group} style={{ height: 40 + "px", margin: 15 + "px" }} /> */}
+        <img src={group} style={{ height: 40 + "px", margin: 15 + "px" }} />
         <img src={home} style={{ height: 40 + "px", margin: 15 + "px" }} />
         <img
           src={poppedBubble}
