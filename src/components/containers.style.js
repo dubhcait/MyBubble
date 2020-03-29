@@ -1,12 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { bottomRightBubbles } from "../assets";
+import { topLeftBubbles, bottomRightBubbles } from "../assets";
 
 const UnderlayStyle = styled.div`
-  width: 317px;
-  height: 454px;
-  left: 29px;
-  top: 179px;
+  width: 100vw;
+  height: 100vh;
 
   background: #ffffff;
   border-radius: 5px;
@@ -15,8 +13,10 @@ const UnderlayStyle = styled.div`
   align-items: center;
 `;
 
-const Underlay = () => (
+const Underlay = ({ children }) => (
   <UnderlayStyle>
+    <img src={topLeftBubbles} />
+    {children}
     <img src={bottomRightBubbles} />
   </UnderlayStyle>
 );

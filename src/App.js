@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Modal } from "./components/modal";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import {
   GameIntro,
@@ -47,20 +47,27 @@ const App = () => {
   const displayModalMesg = () => {};
 
   return (
-    <div className="App">
-      {showIntro && (
-        <Modal>
-          <InitialScreen introPartialSeen={introPartialSeen} />
-        </Modal>
-      )}
-      {showGameInstructions && (
-        <Modal>
-          <GameIntro introAllSeen={introAllSeen} />
-        </Modal>
-      )}
-      {/* {modalMesg && <Modal>{modalMesg}</Modal>} */}
-      <MainScreen lifeCount={lifeCount} />
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          {showIntro && (
+            <Route path="/">
+              <InitialScreen introPartialSeen={introPartialSeen} />
+            </Route>
+          )}
+
+          {showGameInstructions && (
+            <Route path="/">
+              <GameIntro introAllSeen={introAllSeen} />
+            </Route>
+          )}
+
+          <Route path="/">
+            <MainScreen lifeCount={lifeCount} />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 };
 
