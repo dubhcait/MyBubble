@@ -13,6 +13,7 @@ const Underlay = styled.div`
   align-items: center;
 `;
 
+const Underlay = 
 const CircularUnderlay = styled.div`
   border-radius: 50%;
   width: 300px;
