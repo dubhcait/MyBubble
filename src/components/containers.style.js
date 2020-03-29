@@ -1,6 +1,8 @@
+import React from "react";
 import styled from "styled-components";
+import { bottomRightBubbles } from "../assets";
 
-const Underlay = styled.div`
+const UnderlayStyle = styled.div`
   width: 317px;
   height: 454px;
   left: 29px;
@@ -13,7 +15,12 @@ const Underlay = styled.div`
   align-items: center;
 `;
 
-const Underlay = 
+const Underlay = () => (
+  <UnderlayStyle>
+    <img src={bottomRightBubbles} />
+  </UnderlayStyle>
+);
+
 const CircularUnderlay = styled.div`
   border-radius: 50%;
   width: 300px;
