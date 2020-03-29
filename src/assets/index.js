@@ -1,6 +1,6 @@
 import bottomRightBubbles from "./bottomRightBubbles.png";
 import bottomRightDarkBubbles from "./bottomRightDarkBubbles.png";
-import group from "./group.png";
+// import group from "./group.png";
 import groupNegative from "./groupNegative.png";
 import healthBubble from "./healthBubble.png";
 import home from "./home.png";
@@ -19,7 +19,7 @@ import twoPeople from "./twoPeople.png";
 export {
   bottomRightBubbles,
   bottomRightDarkBubbles,
-  group,
+  // group,
   groupNegative,
   healthBubble,
   home,

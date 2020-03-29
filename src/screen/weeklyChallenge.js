@@ -33,7 +33,7 @@ const WeeklyChallenge = ({ introAllSeen }) => (
     <Heading>Don’t burst any bubbles by breaking social distance!</Heading>
     <FlexRow>
       <GroupIcon />
-      <img src={group} />
+      {/* <img src={group} /> */}
       <img src={home} />
       <img src={poppedBubble} />
     </FlexRow>
