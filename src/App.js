@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import {
   GameIntro,
   InitialScreen,
+  KeepYourDistanceRule,
+  GroupsRule,
+  StayHoneRule,
   OupsTooManyPeople,
   OupsEnd,
   WellDone,
@@ -50,6 +53,16 @@ const App = () => {
     <Router>
       <div className="App">
         <Switch>
+          <Route path="/distance">
+            <KeepYourDistanceRule />
+          </Route>
+          <Route path="/groups">
+            <GroupsRule />
+          </Route>
+          <Route path="/staysthome">
+            <StayHoneRule />
+          </Route>
+
           {showIntro && (
             <Route path="/">
               <InitialScreen introPartialSeen={introPartialSeen} />

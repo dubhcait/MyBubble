@@ -13,7 +13,8 @@ import topLeftDarkBubbles from "./topLeftDarkBubbles.png";
 import distance from "./distance.png";
 import leaderboard from "./leaderboard.png";
 import award from "./award.png";
-import handShake from "./handShake.png";
+import goodDeed from "./goodDeed.png";
+import twoPeople from "./twoPeople.png";
 
 export {
   bottomRightBubbles,
@@ -31,5 +32,6 @@ export {
   distance,
   leaderboard,
   award,
-  handShake
+  goodDeed,
+  twoPeople
 };

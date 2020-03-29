@@ -7,17 +7,33 @@ const UnderlayStyle = styled.div`
   height: 100vh;
 
   background: #ffffff;
-  border-radius: 5px;
+
+  position: relative;
+`;
+
+const ImgTop = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
+
+const ImgBottom = styled.img`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+`;
+
+const Internal = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
-const Underlay = ({ children }) => (
+const Underlay = ({ children, bubbles = true }) => (
   <UnderlayStyle>
-    <img src={topLeftBubbles} />
-    {children}
-    <img src={bottomRightBubbles} />
+    <Internal style={{ zIndex: 2000 }}>{children}</Internal>
+    {bubbles && <ImgTop src={topLeftBubbles} />}
+    {bubbles && <ImgBottom src={bottomRightBubbles} />}
   </UnderlayStyle>
 );
 
