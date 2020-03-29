@@ -16,11 +16,13 @@ import {
   group
 } from "../assets";
 
-const GameIntro = ({ introAllSeen }) => (
+const WeeklyChallenge = ({ introAllSeen }) => (
   <Underlay>
-    <Heading> How to WIN</Heading>
+    <Heading>THIS WEEK’S CHALLENGE</Heading>
 
-    <Text>Start the week with a new challenge and 3 bubbles</Text>
+    <Text>Signup for an online course </Text>
+    <Text>Have a videochat with a friend</Text>
+    <Text>And don’t break the social distance rules!</Text>
     <FlexRow>
       <img src={newTask} />
       <img src={plus} />
@@ -36,12 +38,13 @@ const GameIntro = ({ introAllSeen }) => (
       <img src={poppedBubble} />
     </FlexRow>
 
-    <Text>Keep your bubbles safe by Sunday and get rewards!</Text>
+    <Heading>TO EARN:</Heading>
+    <FlexRow>
+      <Text>A free month of Netflixd</Text>
+    </FlexRow>
 
-    <PrimaryButton onClick={() => introAllSeen()}>
-      What’s social distancing?
-    </PrimaryButton>
+    <PrimaryButton>Challenge accepted!</PrimaryButton>
   </Underlay>
 );
 
-export default GameIntro;
+export default WeeklyChallenge;

@@ -10,6 +10,10 @@ import poppedBubble from "./poppedBubble.png";
 import thumbsUp from "./thumbsUp.png";
 import topLeftBubbles from "./topLeftBubbles.png";
 import topLeftDarkBubbles from "./topLeftDarkBubbles.png";
+import distance from "./distance.png";
+import leaderboard from "./leaderboard.png";
+import award from "./award.png";
+import handShake from "./handShake.png";
 
 export {
   bottomRightBubbles,
@@ -23,5 +27,9 @@ export {
   poppedBubble,
   thumbsUp,
   topLeftBubbles,
-  topLeftDarkBubbles
+  topLeftDarkBubbles,
+  distance,
+  leaderboard,
+  award,
+  handShake
 };

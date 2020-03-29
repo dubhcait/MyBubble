@@ -7,24 +7,19 @@ import {
   FlexColumn,
   PrimaryButton
 } from "../components";
+import { healthBubble } from "../assets";
 
 const InitialScreen = ({ introPartialSeen }) => (
-  <Underlay>
-    <Heading>
-      The app that rewards young folks for staying safe in ‘their bubble‘
-    </Heading>
+  <Underlay color="dark">
+    <Heading color="white">YOUR MISSION</Heading>
 
-    <Text>Why social distancing is important - one liner</Text>
+    <Text>Keep you and your loved ones safe as we battle COVID-19</Text>
+    <img src={healthBubble} />
+    <Text>
+      Stay in your “bubble” each week - a <a href="#">safe social distance</a>
+      to earn rewards
+    </Text>
 
-    <Heading>THE CHALLENGE be a good neighbor by:</Heading>
-
-    <FlexColumn>
-      <BulletPont>Keeping your distance </BulletPont>
-      <BulletPont>Avoiding groups </BulletPont>
-      <BulletPont>Staying home </BulletPont>
-      <BulletPont>Sending positivity </BulletPont>
-      <BulletPont>Helping others Keeping informed</BulletPont>
-    </FlexColumn>
     <PrimaryButton onClick={() => introPartialSeen()}>Lets go!</PrimaryButton>
   </Underlay>
 );
